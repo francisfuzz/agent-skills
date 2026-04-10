@@ -13,49 +13,44 @@ A home for all of my agents' skills 🛖
 
 ## For Non-Developers: How to Use These Skills
 
-If you just want to use these skills with Claude and aren't interested in the technical setup, follow these steps:
+Skills are plain text files that Claude Code reads automatically when you work inside this repository. No plugins, no configuration — just open the repo in Claude Code and the skills are live.
 
-### Prerequisites
-- A Claude account (free or paid)
-- Access to Claude at [claude.ai](https://claude.ai)
+### What you need
 
-### Step 1: Access Claude Code on the Web
+- A Claude account (free or paid) at [claude.ai](https://claude.ai)
+- [Claude Code](https://claude.ai/code) — the desktop app, web app, or CLI
 
-1. Go to **[claude.ai/code](https://claude.ai/code)**
-2. Sign in with your Claude account if you haven't already
-3. You're now in Claude Code, which gives you enhanced capabilities
+### Option A: Use skills from this repo (project scope)
 
-### Step 2: Load a Skill into Your Session
+Skills are active whenever Claude Code is open inside this folder.
 
-When you visit Claude Code, you can start a conversation and Claude will suggest relevant skills based on what you're asking for. Here's how to use them:
+1. **Download this repository** — click the green **Code** button on GitHub, then **Download ZIP**, and unzip it somewhere on your computer.
+2. **Open Claude Code** — go to [claude.ai/code](https://claude.ai/code) in your browser, or launch the desktop app.
+3. **Open the folder** — use "Open folder" (desktop app) or start a new session pointed at the unzipped directory.
+4. **Start chatting** — Claude will automatically pick up and use any skill that matches your request. No extra steps needed.
 
-**Option A: Let Claude Suggest Skills Automatically**
-- Simply describe what you want to do (e.g., "find me the best price for a laptop")
-- Claude will automatically suggest and offer to use relevant skills
-- Click "Accept" when prompted to enable a skill
+### Option B: Make skills available everywhere (personal scope)
 
-**Option B: Manually Request a Skill**
-- Type your request in Claude Code
-- If a skill is available for your task, Claude will recognize it and ask permission to use it
-- You can grant access and Claude will use the skill to help you
+Copy a skill folder into your personal Claude skills directory so it works in any project, not just this one.
 
-### Step 3: Use the Skill
+1. Complete step 1 from Option A to get the files.
+2. Create the directory `~/.claude/skills/` if it doesn't already exist.
+3. Copy the skill folder you want — for example:
+   ```
+   ~/.claude/skills/shopping-research/
+   ```
+   The folder must contain the `SKILL.md` file at the top level.
+4. Restart Claude Code. The skill is now available in every session.
 
-Once a skill is enabled, Claude will use it automatically whenever relevant to your request. You don't need to do anything special—just ask Claude what you need!
+### Current available skills
 
-### Current Available Skills
+| Skill | What it does | Example prompts |
+|---|---|---|
+| **Shopping Research** | Finds the best all-in price (product + tax + shipping) across major retailers | "Find me the best deal on AirPods Pro" · "Compare prices for a 65-inch 4K TV" · "Where should I buy running shoes?" |
 
-- **Shopping Research** - Find the best price for any product, compare retailers, and get an all-in cost including tax and shipping
+### How skills get used
 
-### Example: Using the Shopping Research Skill
-
-You could say any of these to trigger the skill:
-- "Find me the best deal on a 65-inch 4K TV"
-- "What's the cheapest way to get a blue wool sweater in size M?"
-- "Compare prices for AirPods Pro"
-- "Where should I buy running shoes online?"
-
-Claude will search multiple retailers, calculate tax and shipping for your location, and show you the top 3 options ranked by total cost.
+You don't invoke skills manually. Just describe what you want in plain language — Claude recognizes when a skill applies and uses it automatically. If you want to be explicit, you can say something like "use your shopping research skill to find..." but it's not required.
 
 ---
 
@@ -102,47 +97,23 @@ Each skill lives in `.claude/skills/<skill-name>/` with:
 
 ### Step 3: Load a Skill into Claude Code
 
-#### Using the Web/Desktop App
+Skills are loaded automatically — no CLI flags or import commands needed. Just open Claude Code in a directory that contains `.claude/skills/` and all skills in that directory are active.
 
-1. Open **Claude Code** on [claude.ai/code](https://claude.ai/code) or in the desktop app
-2. Look for the **Skills** tab in the sidebar
-3. Click **"Add a local skill"** or **"Import from repository"**
-4. Point to the skill directory or paste the repository URL
-5. The skill will be imported and available in your session
-
-#### Using Claude Code CLI
-
-If you're using the Claude Code CLI:
-
-```bash
-# Navigate to the skill directory
-cd .claude/skills/shopping-research
-
-# Load the skill in Claude Code
-claude-code --load-skill ./SKILL.md
-```
+For personal scope (available in every project), copy the skill folder to `~/.claude/skills/<skill-name>/`.
 
 ### Step 4: Review Skill Documentation
 
-Each skill's behavior and capabilities are defined in its `SKILL.md` file. Open `.claude/skills/<skill-name>/SKILL.md` to understand:
-- What the skill does
-- How it processes requests
-- Important behavior rules
-- Any special configurations
+Each skill's behavior is defined in its `SKILL.md` file. Open `.claude/skills/<skill-name>/SKILL.md` to understand what the skill does, how it processes requests, and any behavior rules.
 
 ### Step 5: Test the Skill
 
-Start a Claude conversation and test the skill:
+Start a Claude Code session from the repo root and ask naturally:
 
 ```
-# Test the shopping research skill
-claude-code
-
-# Then type:
-"Find the best price for a MacBook Air 13-inch in my area"
+Find the best price for a MacBook Air 13-inch in my area
 ```
 
-Claude will use the skill to search for prices and recommend the best option.
+Claude will recognize the request, apply the shopping-research skill, and return ranked results.
 
 ### Creating Your Own Skill
 
@@ -174,7 +145,7 @@ To create a new skill:
 
 3. **Add reference files** (optional) in the `references/` directory if your skill needs supporting data
 
-4. **Load it into Claude Code** using the steps above
+4. **Open Claude Code** in this repo's root directory — the skill is automatically available
 
 5. **Test thoroughly** before sharing
 
