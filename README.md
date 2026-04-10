@@ -50,7 +50,7 @@ Copy a skill folder into your personal Claude skills directory so it works in an
 
 ### How skills get used
 
-You don't invoke skills manually. Just describe what you want in plain language — Claude recognizes when a skill applies and uses it automatically. If you want to be explicit, you can say something like "use your shopping research skill to find..." but it's not required.
+Skills activate automatically — Claude reads each skill's description and applies it when your request matches. You can also invoke any skill explicitly by typing `/skill-name` (e.g., `/shopping-research find me a laptop deal`).
 
 ---
 
@@ -60,10 +60,9 @@ If you're a developer who wants to understand, customize, or create skills, this
 
 ### Prerequisites
 
-- Node.js 18+ installed
 - A Claude account
 - Git (for cloning the repository)
-- Claude Code CLI installed (`npm install -g @anthropic-ai/claude-code`)
+- Claude Code CLI installed — see [setup docs](https://docs.anthropic.com/en/docs/claude-code/setup) for the current installer (`npm install -g @anthropic-ai/claude-code` is deprecated)
 
 ### Step 1: Clone the Repository
 
