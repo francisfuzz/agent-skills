@@ -91,8 +91,9 @@ agent-skills/
 │               ├── sources.md
 │               ├── tax-rates.md
 │               └── tariff-flags.md
-├── README.md
-└── package.json
+├── CLAUDE.md                      # Guidance for Claude Code
+├── .gitignore                     # Git ignore rules
+└── README.md
 ```
 
 Each skill lives in `.claude/skills/<skill-name>/` with:
