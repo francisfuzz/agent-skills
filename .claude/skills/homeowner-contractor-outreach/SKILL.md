@@ -11,11 +11,6 @@ description: >
   hire. Also triggers when a user wants to compare contractor quotes, follow up
   on estimate requests, or book a service appointment. Do NOT use for pure DIY
   questions where the user has stated they want to do the work themselves.
-license: Apache-2.0
-metadata:
-  author: homeowner-tools
-  version: "1.0"
-  requires_tools: [web_search, gmail, google_calendar]
 ---
 
 # Homeowner Contractor Outreach Skill
