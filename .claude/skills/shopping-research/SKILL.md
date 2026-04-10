@@ -34,6 +34,7 @@ For each source record:
 - Listed price
 - Shipping cost (or free/threshold)
 - In-stock status
+- **Direct URL** to the specific product listing page (not the retailer homepage)
 - If marketplace: note if sold by retailer directly vs. third-party seller
 
 ---
@@ -69,9 +70,9 @@ Pick the 3 lowest all-in options. Present as:
 
 | # | Retailer | Price | Shipping | Tax | **Total** |
 |---|----------|-------|----------|-----|-----------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
+| 1 | [Retailer](url) | | | | |
+| 2 | [Retailer](url) | | | | |
+| 3 | [Retailer](url) | | | | |
 
 **Best pick:** [Retailer] — [one sentence on why it wins]
 
