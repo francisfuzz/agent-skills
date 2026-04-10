@@ -44,9 +44,7 @@ Copy a skill folder into your personal Claude skills directory so it works in an
 
 ### Current available skills
 
-| Skill | What it does | Example prompts |
-|---|---|---|
-| **Shopping Research** | Finds the best all-in price (product + tax + shipping) across major retailers | "Find me the best deal on AirPods Pro" · "Compare prices for a 65-inch 4K TV" · "Where should I buy running shoes?" |
+Browse the [`skills/` directory](https://github.com/francisfuzz/agent-skills/tree/main/.claude/skills) — each folder is one skill, and its `SKILL.md` describes what it does and when it triggers.
 
 ### How skills get used
 
